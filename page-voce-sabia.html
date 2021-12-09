@@ -1,0 +1,131 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>Projeto contra subnutrição infantil</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="icon.png">
+	<!-- Place favicon.ico in the root directory -->
+
+	<link rel="stylesheet" href="https://use.typekit.net/fcg1per.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<meta name="theme-color" content="#fafafa">
+</head>
+
+<body id="page-voce-sabia">
+
+	<svg viewBox="0 0 140 280" id="svg-triangulo-esquerda">
+		<polygon points="0,0 0,140 140,140" class="svg-triangulo"></polygon>
+		<polygon points="0,140 0,280 140,280" class="svg-triangulo"></polygon>
+	</svg>
+
+	<svg viewBox="0 0 140 280" id="svg-triangulo-direita">
+		<polygon points="0,0 140,0 140,140" class="svg-triangulo"></polygon>
+		<polygon points="0,140 140,140 140,280" class="svg-triangulo"></polygon>
+	</svg>
+
+	<svg viewBox="0 0 120 240" id="svg-circulo-direita">
+		<circle cx="120" cy="120" r="120" class="svg-circulo"></circle>
+	</svg>
+
+	<div id="container">
+
+		<div id="cabecalho">
+			<div id="titulo">
+				<svg width="240" height="240" id="svg-circulo-container">
+					<circle cx="120" cy="120" r="120" id="svg-circulo" />
+				</svg>
+				<h1><a href="index.html">Nutr<span class="destaque">ICA</span></a></h1>
+				<h2><a href="index.html">projeto contra a <br>subnutrição infantil</a></h2>
+			</div>
+
+			<div id="menu-toggle" onclick="document.getElementById('menu').classList.toggle('ativo');this.classList.toggle('ativo');">
+				<span class="abrir">Menu</span>
+				<span class="fechar">Fechar</span>
+			</div>
+
+			<div id="menu">
+				<div class="menu-item"><a class="scroll" href="page-quem-somos.html">Quem somos</a></div>
+				<div class="menu-item"><a class="scroll" href="page-o-que-e.html">O que é subnutrição?</a></div>
+				<div class="menu-item ativo"><a class="scroll" href="page-voce-sabia.html">Você sabia?</a></div>
+				<div class="menu-item"><a class="scroll" href="page-publicacoes.html">Nossas publicações</a></div>
+				<div class="menu-item"><a class="scroll" href="page-ensinar.html">Para ensinar</a></div>
+				<div class="menu-item"><a class="scroll" href="page-aprender.html">Para aprender</a></div>
+				<div class="menu-item"><a class="scroll" href="page-dicas.html">Dicas</a></div>
+				<div class="menu-item"><a class="scroll" href="page-contato.html">Contato</a></div>
+			</div>
+		</div>
+
+		<div id="conteudo" class="voce-sabia">
+			<h2>Você sabia?</h2>
+			<p>Pequenos textos com curiosidades relacionadas a alimentação e subnutrição.</p>
+
+			<!-- 
+			<div>
+				<h3>Projeto contra subnutrição infantil</h3>
+
+				<p>Fotos: Lucas Braga</p>
+
+				<div class="galeria">
+					<div class="galeria-item"><img src="img/subnutricao_01.png"></div>
+					<div class="galeria-item"><img src="img/subnutricao_02.png"></div>
+					<div class="galeria-item"><img src="img/subnutricao_03.png"></div>
+					<div class="galeria-item"><img src="img/subnutricao_04.png"></div>
+					<div class="galeria-item"><img src="img/subnutricao_05.png"></div>
+					<div class="galeria-item"><img src="img/subnutricao_06.png"></div>
+					<div class="galeria-item"><img src="img/subnutricao_07.png"></div>
+					<div class="galeria-item"><img src="img/subnutricao_09.png"></div>
+					<div class="galeria-item"><img src="img/subnutricao_10.png"></div>
+					<div class="galeria-item"><img src="img/subnutricao_11.png"></div>
+					<div class="galeria-item"><img src="img/subnutricao_12.png"></div>
+					<div class="galeria-item"><img src="img/subnutricao_13.png"></div>
+					<div class="galeria-item"><img src="img/subnutricao_14.png"></div>
+					<div class="galeria-item"><img src="img/subnutricao_15.png"></div>
+					<div class="galeria-item"><img src="img/subnutricao_16.png"></div>
+					<div class="galeria-item"><img src="img/subnutricao_17.png"></div>
+					<div class="galeria-item"><img src="img/subnutricao_18.png"></div>
+					<div class="galeria-item"><img src="img/subnutricao_19.png"></div>
+				</div>
+
+				<h3>Análises atropométricas</h3>
+
+				<div class="galeria">
+					<div class="galeria-item"><img src="img/analise_antropometricas_01.jpeg"></div>
+					<div class="galeria-item"><img src="img/analise_antropometricas_02.png"></div>
+					<div class="galeria-item"><img src="img/analise_antropometricas_03.png"></div>
+					<div class="galeria-item"><img src="img/analise_antropometricas_04.png"></div>
+				</div>
+
+				<h3>Distribuição</h3>
+
+				<div class="galeria">
+					<div class="galeria-item"><img src="img/distribuicao_01.jpeg"></div>
+					<div class="galeria-item"><img src="img/distribuicao_02.png"></div>
+					<div class="galeria-item"><img src="img/distribuicao_03.png"></div>
+					<div class="galeria-item"><img src="img/distribuicao_04.png"></div>
+					<div class="galeria-item"><img src="img/distribuicao_05.png"></div>
+				</div>
+				<h3>Preparo e envase</h3>
+
+				<div class="galeria">
+					<div class="galeria-item"><img src="img/preparo_envase_01.png"></div>
+					<div class="galeria-item"><img src="img/preparo_envase_02.png"></div>
+					<div class="galeria-item"><img src="img/preparo_envase_03.png"></div>
+					<div class="galeria-item"><img src="img/preparo_envase_04.png"></div>
+					<div class="galeria-item"><img src="img/preparo_envase_05.png"></div>
+				</div>
+			</div> -->
+		</div>
+	</div>
+
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,833 @@
+@import "normalize";
+
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,l
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+	 Base styles: opinionated defaults
+	 ========================================================================== */
+
+html {
+	color: #222;
+	font-size: 1em;
+	line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+	background: #b3d4fc;
+	text-shadow: none;
+}
+
+::selection {
+	background: #b3d4fc;
+	text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+	vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+	resize: vertical;
+}
+
+/* ==========================================================================
+	 Author's custom styles
+	 ========================================================================== */
+
+body {
+	font-family: basic-sans, sans-serif;
+}
+
+img {
+	max-width: 100%;
+}
+
+@modulo: 10px;
+@margem: @modulo * 6;
+@lateral_larg: @modulo * 30;
+@lateral_larg_1700: @modulo * 25;
+
+@preto: #000;
+@branco: #fff;
+@roxo: #548;
+@vermelho: #d43;
+@verde: #5c8;
+@amarelo: #fac64e;
+@azul: #8df;
+
+@regular: 400;
+@bold: 700;
+@black: 900;
+
+#container {
+	max-width: calc(100% - @modulo * 48);
+	margin: 0 auto;
+	margin-top: @margem;
+	margin-bottom: @margem;
+}
+
+#cabecalho {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: @lateral_larg;
+
+	#titulo {
+		position: absolute;
+		top: @margem;
+		left: 0;
+
+		#svg-circulo-container {
+			position: absolute;
+			top: 0;
+			left: -120px;
+			z-index: -1;
+		}
+
+		#svg-circulo {
+			fill: @amarelo;
+		}
+
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+		h1 {
+			margin: 0;
+			margin-top: @modulo * 6;
+			margin-bottom: @modulo * 1;
+
+			font-size: 2.4rem;
+			line-height: 1em;
+			text-transform: uppercase;
+			letter-spacing: .1em;
+			font-weight: @regular;
+
+			border-bottom: 4px solid @vermelho;
+			display: inline-block;
+
+			.destaque {
+				font-weight: @black;
+			}
+		}
+
+		h2 {
+			margin: 0;
+
+			font-size: 1.6rem;
+			line-height: 1em;
+			font-style: italic;
+			font-weight: @regular;
+		}
+	}
+
+	#menu-toggle {
+		display: none;
+		position: fixed;
+
+		left: auto;
+		right: @modulo * 16;
+		top: @margem;
+
+		font-size: 1.2rem;
+		line-height: 1em;
+		text-transform: uppercase;
+		letter-spacing: .1em;
+		font-weight: @bold;
+
+		background: @amarelo;
+		padding: .6em .8em;
+		border-radius: 1em;
+		z-index: 99;
+		&.ativo {
+			background: @roxo;
+			color: @branco;
+		}
+	}
+
+	#menu {
+		position: absolute;
+		bottom: @margem;
+		left: 0;
+
+		.menu-item {
+			font-size: 1.6rem;
+			padding: 0;
+			line-height: 1em;
+			position: relative;
+			a {
+				color: inherit;
+				display: block;
+				text-decoration: none;
+				padding: .4em 0;
+			}
+			a:hover, &.ativo a {
+				color: @vermelho;
+				&::before {
+					content: "*";
+					position: absolute;
+					top: calc(@modulo + .2em);
+					left: -@modulo * 3;
+					font-size: 1.8em;
+					font-weight: @bold;
+				}
+			}
+			&:last-child a {
+				padding-bottom: 0;
+			}
+		}
+	}
+}
+
+#conteudo {
+	margin-left: @lateral_larg + @margem;
+
+	* {
+		box-sizing: border-box;
+	}
+
+	h2 {
+		margin: 0;
+		margin-top: @modulo * 6;
+		margin-bottom: @modulo * 4;
+
+		font-size: 2.4rem;
+		line-height: 1em;
+		text-transform: uppercase;
+		letter-spacing: .1em;
+
+		border-bottom: 4px solid @vermelho;
+		display: inline-block;
+	}
+
+	h3 {
+		margin: 0;
+		margin-top: @modulo * 8;
+		margin-bottom: @modulo * 4;
+
+		font-size: 1.8rem;
+		line-height: 1.2em;
+		text-transform: uppercase;
+		letter-spacing: .1em;
+	}
+
+	h4 {
+		margin-top: @modulo * 6;
+		margin-bottom: @modulo * 2;
+		font-size: 1.6rem;
+		line-height: 1.2em;
+	}
+
+	h1, h2, h3, h4, p, ul, li, label, form, input, select, textarea {
+		max-width: 800px;
+	}
+
+	p, li, label, input, select, textarea {
+		font-size: 1.4rem;
+	}
+
+	input:not([type=submit]), select, textarea {
+		border: 2px solid @vermelho;
+		background: @branco;
+		padding: .7em .8em;
+		width: 100%;
+
+		&:focus {
+			border-color: @amarelo;
+			outline: 0;
+		}
+	}
+
+	input[type=submit], button {
+		border: 0;
+		outline: 2px solid @branco;
+		cursor: pointer;
+		color: @branco;
+		background: @vermelho;
+		padding: .7em .8em;
+
+		&:hover, &:focus {
+			outline: 0;
+			background: @amarelo;
+			color: @preto;
+		}
+	}
+
+	label {
+		display: block;
+		margin-bottom: .4rem;
+	}
+
+	.grid {
+		display: grid;
+		grid-gap: @modulo * 2;
+	}
+
+	.col-2 {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.span-2 {
+		grid-column: 1 / span 2;
+	}
+
+	.input-container {
+		margin-bottom: 1rem;
+	}
+
+	ul {
+		padding-left: 1.2em;
+		li {
+			padding-left: 1em;
+			margin-bottom: .5em;
+		}
+	}
+
+	a {
+		color: @vermelho;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	iframe {
+		height: 40vw !important;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	.fotografo {
+		font-size: 1rem;
+		color: fade(@preto, 50%);
+	}
+
+	&.home {
+		h3 {
+			margin: 0;
+			text-decoration: underline solid @vermelho 4px;
+			text-decoration-skip-ink: none;
+		}
+
+		p {
+			margin: 0;
+		}
+
+		.texto {
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+			margin: @margem 0;
+			grid-gap: @modulo * 2;
+		}
+	}
+	
+	// quem somos
+	#membros {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		ul {
+			margin: 0;
+			padding: 0;
+			li {
+				margin: 0;
+				padding: 0;
+			}
+		}
+		.membro {
+			text-align: center;
+			.membro_foto {
+				img {
+					background: @branco;
+					width: 90%;
+					overflow: hidden;
+					border-radius: 50%;
+					border: 2px solid @amarelo;
+				}
+			}
+			.membro_nome {
+				margin: 0;
+				padding: @modulo * 2;
+				line-height: 1.2em;
+				color: @amarelo;
+				font-weight: @bold;
+			}
+			.membro_desc {
+				// display: none;
+				list-style: none;
+				padding: @modulo * 2;
+				padding-top: 0;
+				margin: 0;
+				li {
+					font-size: 1.1rem;
+					line-height: 1.2em;
+					margin-bottom: @modulo * 0.5;
+				}
+				.membro_formacao {
+					font-weight: @bold;
+				}
+				.membro_contato_email {
+					font-size: 1rem;
+					font-style: italic;
+					word-break: break-all;
+				}
+			}
+		}
+	}
+
+	// publicacoes
+	.publicacao-bloco {
+		padding-left: 2em;
+		border-left: 4px solid @roxo;
+		.citacao {
+			font-size: 1.1rem;
+		}
+	}
+
+	// dicas
+	.dicas-indicacao {
+		background: @branco;
+		color: @preto;
+		h4 {
+			margin-top: 0;
+		}
+		p:last-child {
+			margin-bottom: 0;
+		}
+		.dicas-texto {
+			padding: @modulo * 4;
+			a {
+				color: @vermelho;
+			}
+		}
+	}
+
+}
+
+#rodape {
+	margin-left: @lateral_larg + @margem;
+
+	h3 {
+		margin: 0;
+		margin-top: @modulo * 12;
+
+		font-size: 1.2rem;
+		line-height: 1.2em;
+		text-transform: uppercase;
+		letter-spacing: .1em;
+		border-bottom: 3px solid @vermelho;
+	}
+
+	img {
+		display: inline-block;
+		margin-right: @modulo * 4;
+		margin-top: @modulo * 4;
+	}
+}
+
+#svg-triangulo-esquerda, #svg-triangulo-direita, #svg-circulo-direita {
+	position: fixed;
+	z-index: -2;
+}
+
+#svg-triangulo-esquerda, #svg-triangulo-direita {
+	width: 140px;
+	height: 280px;
+}
+
+#svg-triangulo-esquerda {
+	left: 0;
+	bottom: @margem;
+	.svg-triangulo {
+		fill: @vermelho;
+	}
+}
+
+#svg-triangulo-direita {
+	right: 0;
+	top: @margem;
+	.svg-triangulo {
+		fill: @azul;
+	}
+}
+
+#svg-circulo-direita {
+	width: 120px;
+	height: 240px;
+	right: 0;
+	bottom: @margem;
+	.svg-circulo {
+		fill: @roxo;
+	}
+}
+
+.fundo-roxo {
+	background: @roxo;
+	color: @branco;
+	// #svg-triangulo-esquerda .svg-triangulo 	{ fill: @vermelho; }
+	// #svg-triangulo-direita  .svg-triangulo  { fill: @azul; }
+	#svg-circulo-direita 	.svg-circulo 	{ fill: @amarelo; }
+	#cabecalho {
+		#titulo {
+			#svg-circulo 	{ fill: @vermelho; }
+			h1 				{ border-color: @amarelo; }
+		}
+		#menu .menu-item {
+			a:hover, &.ativo a { color: @amarelo; }
+		}
+	}
+	#conteudo {
+		h2 { border-color: @amarelo; }
+		a { color: @amarelo; }
+	}
+}
+
+.fundo-amarelo {
+	background: @amarelo;
+	#cabecalho {
+		#titulo {
+			#svg-circulo 	{ fill: @azul; }
+		}
+		#menu-toggle {
+			background: @roxo;
+			color: @branco;
+		}
+	}
+}
+
+.fundo-azul {
+	background: @azul;
+	#svg-triangulo-direita  .svg-triangulo  { fill: @roxo; }
+	#svg-circulo-direita 	.svg-circulo 	{ fill: @amarelo; }
+	#cabecalho {
+		#titulo {
+			#svg-circulo 	{ fill: @amarelo; }
+			// h1 				{ border-color: @roxo; }
+		}
+		#menu .menu-item {
+			// a:hover, &.ativo a { color: @roxo; }
+		}
+	}
+	#conteudo {
+		// h2 { border-color: @roxo; }
+		// a { color: @roxo; }
+	}
+}
+
+.fundo-vermelho {
+	background: @vermelho;
+	color: @branco;
+	#svg-triangulo-esquerda .svg-triangulo 	{ fill: @amarelo; }
+	#cabecalho {
+		#titulo {
+			#svg-circulo 	{ fill: @roxo; }
+			h1 				{ border-color: @amarelo; }
+		}
+		#menu .menu-item {
+			a:hover, &.ativo a { color: @amarelo; }
+		}
+	}
+	#conteudo {
+		h2 { border-color: @amarelo; }
+		a { color: @amarelo; }
+	}
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (max-width: 1700px) {
+	#svg-triangulo-esquerda, #svg-triangulo-direita {
+		width: 120px;
+		height: 240px;
+	}
+
+	#svg-circulo-direita {
+		width: 100px;
+		height: 200px;
+	}
+
+	#container {
+		max-width: calc(100% - @modulo * 32);
+	}
+
+	#conteudo {
+		#membros {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+}
+
+@media only screen and (max-width: 1500px) {
+
+	#cabecalho {
+		width: @lateral_larg_1700;
+
+		#titulo {
+		}
+
+		#menu {
+			.menu-item {
+				font-size: 1.4rem;
+			}
+		}
+	}
+
+	#conteudo {
+		margin-left: @lateral_larg_1700 + @margem;
+
+		h3 { font-size: 1.8rem; }
+		h4 { font-size: 1.4rem; }
+		p, li {
+			font-size: 1.2rem;
+			max-width: 800px;
+		}
+	}
+
+	#rodape {
+		margin-left: @lateral_larg_1700 + @margem;
+	}
+}
+
+@media only screen and (max-width: 1300px) {
+
+	#cabecalho {
+		position: relative;
+		top: auto;
+		height: @modulo * 24;
+		margin-bottom: @modulo * 4;
+		width: 100%;
+
+		#titulo {
+			position: relative;
+			top: auto;
+		}
+
+		#menu-toggle {
+			display: block;
+			color: @preto;
+
+			.fechar {
+				display: none;
+			}
+
+			&.ativo {
+				.abrir { display: none; }
+				.fechar { display: inline; }
+			}
+		}
+
+		#menu {
+			z-index: 98;
+			display: none;
+			position: fixed;
+			left: @modulo * 16;
+			bottom: @margem * 2;
+			color: @preto;
+			.menu-item {
+				font-size: 2rem;
+				a:hover, &.ativo a {
+					color: @vermelho !important;
+					&::before {
+						top: calc(@modulo + .25em);
+					}
+				}
+			}
+			&.ativo {
+				display: grid;
+			}
+			&:before {
+				content: '';
+				position: fixed;
+				background: @amarelo;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+		}
+	}
+
+	.fundo-amarelo {
+		#cabecalho #menu:before {
+			background: @azul;
+		}
+	}
+
+	#conteudo {
+		margin-left: 0;
+
+		.video {
+			iframe {
+				height: 56vw !important;
+			}
+		}
+
+		&.home {
+			.texto {
+				grid-template-columns: 1fr;
+			}
+		}
+	}
+
+
+	#rodape {
+		margin-left: 0;
+	}
+		
+}
+
+@media only screen and (max-width: 1000px) {
+
+	#cabecalho {
+		height: auto;
+
+		#menu-toggle {
+			top: 0;
+			right: 5%;
+			border-radius: 0 0 1em 1em;
+		}
+
+		#menu {
+			left: @margem;
+			right: @margem;
+			bottom: @margem;
+			.menu-item {
+				font-size: 1.8rem;
+			}
+		}
+	}
+
+	#container {
+		max-width: 90%;
+	}
+
+	#conteudo {
+		#membros {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.col-2 {
+			grid-template-columns: 1fr;
+		}
+
+		.span-2 {
+			grid-column: 1 / span 1;
+		}
+	}
+}
+
+
+@media only screen and (max-width: 500px) {
+	#svg-triangulo-esquerda, #svg-triangulo-direita {
+		width: 80px;
+		height: 160px;
+		// opacity: .5;
+	}
+
+	#svg-circulo-direita {
+		width: 50px;
+		height: 100px;
+		// opacity: .5;
+	}
+
+	#cabecalho {
+		#menu {
+			left: @modulo * 4;
+			right: @modulo * 4;
+			bottom: @modulo * 4;
+		}
+	}
+
+	#conteudo {
+		#membros {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+}
+
+/* ==========================================================================
+	 Helper classes
+	 ========================================================================== */
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+	content: " ";
+	display: table;
+}
+
+.clearfix::after {
+	clear: both;
+}
+
+@import "print";

@@ -1,0 +1,79 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+	<meta charset="utf-8">
+	<title>Projeto contra subnutrição infantil</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="icon.png">
+	<!-- Place favicon.ico in the root directory -->
+
+	<link rel="stylesheet" href="https://use.typekit.net/fcg1per.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<meta name="theme-color" content="#fafafa">
+</head>
+
+<body id="page-aprender">
+
+	<svg viewBox="0 0 140 280" id="svg-triangulo-esquerda">
+		<polygon points="0,0 0,140 140,140" class="svg-triangulo"></polygon>
+		<polygon points="0,140 0,280 140,280" class="svg-triangulo"></polygon>
+	</svg>
+
+	<svg viewBox="0 0 140 280" id="svg-triangulo-direita">
+		<polygon points="0,0 140,0 140,140" class="svg-triangulo"></polygon>
+		<polygon points="0,140 140,140 140,280" class="svg-triangulo"></polygon>
+	</svg>
+
+	<svg viewBox="0 0 120 240" id="svg-circulo-direita">
+		<circle cx="120" cy="120" r="120" class="svg-circulo"></circle>
+	</svg>
+
+	<div id="container">
+
+		<div id="cabecalho">
+			<div id="titulo">
+				<svg width="240" height="240" id="svg-circulo-container">
+					<circle cx="120" cy="120" r="120" id="svg-circulo" />
+				</svg>
+				<h1><a href="index.html">Nutr<span class="destaque">ICA</span></a></h1>
+				<h2><a href="index.html">projeto contra a <br>subnutrição infantil</a></h2>
+			</div>
+
+			<div id="menu-toggle" onclick="document.getElementById('menu').classList.toggle('ativo');this.classList.toggle('ativo');">
+				<span class="abrir">Menu</span>
+				<span class="fechar">Fechar</span>
+			</div>
+
+			<div id="menu">
+				<div class="menu-item"><a class="scroll" href="page-quem-somos.html">Quem somos</a></div>
+				<div class="menu-item"><a class="scroll" href="page-o-que-e.html">O que é subnutrição?</a></div>
+				<div class="menu-item"><a class="scroll" href="page-voce-sabia.html">Você sabia?</a></div>
+				<div class="menu-item"><a class="scroll" href="page-publicacoes.html">Nossas publicações</a></div>
+				<div class="menu-item"><a class="scroll" href="page-ensinar.html">Para ensinar</a></div>
+				<div class="menu-item ativo"><a class="scroll" href="page-aprender.html">Para aprender</a></div>
+				<div class="menu-item"><a class="scroll" href="page-dicas.html">Dicas</a></div>
+				<div class="menu-item"><a class="scroll" href="page-contato.html">Contato</a></div>
+			</div>
+		</div>
+
+		<div id="conteudo">
+
+			<h2>Para aprender</h2>
+			<p>Como fazer kefir?</p>
+			<p>Como fazer iogurte?</p>
+			<p>Como aproveitar as frutas da estação?</p>
+
+		</div>
+	</div>
+
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+
+</html>
