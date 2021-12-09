@@ -177,6 +177,22 @@ img {
 		}
 	}
 
+	#linguagem {
+		margin-top: @modulo;
+		a {
+			color: inherit;
+			text-decoration: none;
+
+			font-size: .8rem;
+			line-height: 1em;
+			text-transform: uppercase;
+			letter-spacing: .1em;
+			&.ativo {
+				font-weight: @bold;
+			}
+		}
+	}
+
 	#menu-toggle {
 		display: none;
 		position: fixed;
@@ -230,6 +246,15 @@ img {
 			}
 			&:last-child a {
 				padding-bottom: 0;
+			}
+
+			&.redes-sociais {
+				font-size: 1.6rem;
+				margin-bottom: @modulo;
+				a {
+					color: @vermelho;
+					display: inline-block;
+				}
 			}
 		}
 	}
@@ -582,6 +607,11 @@ img {
 		}
 		#menu .menu-item {
 			a:hover, &.ativo a { color: @amarelo; }
+			&.redes-sociais {
+				a {
+					color: @amarelo;
+				}
+			}
 		}
 	}
 	#conteudo {
