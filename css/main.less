@@ -677,7 +677,7 @@ img {
 	}
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1300px), (max-height: 750px) {
 
 	#cabecalho {
 		position: relative;
@@ -713,7 +713,7 @@ img {
 			bottom: @margem * 2;
 			color: @preto;
 			.menu-item {
-				font-size: 2rem;
+				font-size: 1.6rem;
 				a:hover, &.ativo a {
 					color: @vermelho !important;
 					&::before {
@@ -764,6 +764,7 @@ img {
 	}
 		
 }
+
 
 @media only screen and (max-width: 1000px) {
 
